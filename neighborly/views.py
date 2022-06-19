@@ -83,3 +83,4 @@ def register(request):
             login(request, user)
             return redirect('profile')
     return render(request, 'registration/register.html',{"title":'Register','form':form})
+    
