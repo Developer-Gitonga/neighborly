@@ -1,5 +1,6 @@
 {% extends 'registration/base.html' %} {% load static %} {% block head %}
 <link rel="stylesheet" href="{% static 'css/login.css' %}"> {% endblock %} {% block content %}
+
 <section class="login">
     <form action="" class="login-form" method="post">
         {% csrf_token %}
