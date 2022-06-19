@@ -1,0 +1,28 @@
+.footer {
+    padding: 1rem;
+}
+
+.footer-content {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+}
+
+.footer-content img {
+    height: 1rem;
+}
+
+.footer-content p {
+    font-size: .7rem;
+}
+
+.footer-content span {
+    color: #91ce00;
+    font-weight: 700;
+}

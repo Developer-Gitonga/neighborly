@@ -1,0 +1,36 @@
+{% extends 'ip4/base.html' %} {% load static %} {% block head %}
+<link rel="stylesheet" href="{% static 'css/emergency.css'%}"> {% endblock %} {% block content %}
+<main class="main">
+    <section class="main-landing">
+        <h1>Emergency Contacts</h1>
+    </section>
+    <section class="main-contacts">
+        {% if not user.profile.neighborhood %}
+        <p class="not">You haven't Set a Neighboorhod in your Profile</p>
+        {% else %}
+        <article class="main-contacts-medical">
+            <div class="main-contacts-medical-image">
+                <img src="{% static 'images/ambulance.png'%}" alt="ambulance">
+            </div>
+            <h1>Local Medical Number</h1>
+            <p>{{medics.number}}</p>
+        </article>
+        <article class="main-contacts-global">
+            <div class="main-contacts-global-image">
+                <img src="{% static 'images/siren.png'%}" alt="global">
+            </div>
+            <h1>Global emergency Number</h1>
+            <p>911</p>
+        </article>
+        <article class="main-contacts-police">
+            <div class="main-contacts-police-image">
+                <img src="{% static 'images/police-car.png'%}" alt="police">
+            </div>
+            <h1>Local Police Number</h1>
+            <p>{{ police.number }}</p>
+        </article>
+        {% endif %}
+    </section>
+</main>
+<script src="{% static 'js/nav.js' %}"></script>
+{% endblock %}

@@ -1,0 +1,104 @@
+{% extends 'ip4/base.html' %} {% load static %} {% block head %}
+<link rel="stylesheet" href="{% static 'css/main.css' %}">
+<link rel="stylesheet" href="{% static 'css/pop.css' %}">
+<link rel="stylesheet" href="{% static 'css/footer.css' %}">
+<style>
+    .none {
+        display: none;
+    }
+</style>
+{% endblock %} {% block content %}
+<main class="main">
+    <section class="main-post  none" id="post">
+        <form action="" class="main-post-form" method="post" enctype='multipart/form-data'>
+            {% csrf_token %}
+            <div class="main-post-form-title">
+                <h1>Event/Business</h1>
+                <h2 id="close">&times;</h2>
+            </div>
+            <div class="main-post-form-input">
+                {{ form.image }}{{ form.name }} {{ form.email }} {{ form.neighborhood }}
+            </div>
+            <div class="main-post-form-submit">
+                <button type="submit">Post</button>
+            </div>
+        </form>
+    </section>
+    <section class="main-landing">
+        <article class="main-landing-title">
+            <h1>GET INVOLVED WITH YOUR</h1>
+            <h1>LOCAL COMMUNITY.</h1>
+        </article>
+        <article class="main-landing-search">
+            <div class="main-landing-search-title">
+                <h3>Enter name of business</h3>
+            </div>
+            <form class="main-landing-search-input" method="post">
+                {% csrf_token %} {{ searchform.search }}
+                <button type="submit"><img src="{% static 'images/search.png' %}" alt="search"></button>
+            </form>
+        </article>
+    </section>
+    <section class="main-description">
+        <article class="main-description-bold">
+            <h1>When Communities work together, safer neighborhoods become a reality.</h1>
+        </article>
+        <article class="main-description-light">
+            <p>Today people don't know on doors to make friends.</p>
+            <p>Technology has done alot so getting to know neigbours isn't that difficult nowdays.</p>
+        </article>
+    </section>
+    <section class="main-extra">
+        <article class="main-extra-prevention">
+            <div class="main-extra-prevention-image">
+                <img src="{% static 'images/prevention.png' %}" alt="">
+            </div>
+            <div class="main-extra-prevention-title">
+                <h2>Prevention</h2>
+            </div>
+            <div class="main-extra-prevention-desc">
+                <p>Prevent crime by keeping you eyes and ears open and info your neighbours about security issues.</p>
+            </div>
+        </article>
+        <article class="main-extra-focus">
+            <div class="main-extra-focus-image">
+                <img src="{% static 'images/customer-review.png' %}" alt="">
+            </div>
+            <div class="main-extra-focus-title">
+                <h2>Focus</h2>
+            </div>
+            <div class="main-extra-focus-desc">
+                <p>
+                    Communication is focused on local safety and security no chit chat.Alerts are guided and structured preventing them from becoming off topic.</p>
+            </div>
+        </article>
+        <article class="main-extra-informed">
+            <div class="main-extra-informed-image">
+                <img src="{% static 'images/awareness.png' %}" alt="">
+            </div>
+            <div class="main-extra-informed-title">
+                <h2>Stay Informed</h2>
+            </div>
+            <div class="main-extra-informed-desc">
+                <p>Prevent crime by keeping your eyes and ears open and info your neighbours about security issues.</p>
+            </div>
+        </article>
+    </section>
+    <section class="footer">
+        <article class="footer-content">
+            <p>Crafted with</p>
+            <img src="{%  static 'images/heart.png' %}" alt="heart">
+            <p>By <span>Eugene Mark Oluoch</span></p>
+        </article>
+    </section>
+</main>
+<script src="{% static 'js/nav.js' %}"></script>
+<script src="{% static 'js/pop.js' %}"></script>
+<script>
+    $(document).ready(function() {
+        $("#id_name").attr('placeholder', 'Business/Event');
+        $("#id_email").attr('placeholder', '{{form.email.label}}');
+        $("#id_search").attr('placeholder', 'Search');
+    });
+</script>
+{% endblock %}

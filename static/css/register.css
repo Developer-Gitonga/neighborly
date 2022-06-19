@@ -1,0 +1,119 @@
+.signup {
+    background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 0.7)), to(rgba(0, 0, 0, 0.7))), url(../../static/images/community-activities-teens.jpg);
+    background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url(../../static/images/community-activities-teens.jpg);
+    background-size: cover;
+    background-position: center;
+    font-family: 'Nunito', sans-serif;
+    max-width: 1440px;
+    height: 100vh;
+    margin-inline: auto;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+}
+
+.signup-form {
+    background-color: #ffffff;
+    width: 95%;
+    max-width: 400px;
+    margin-inline: auto;
+    border-radius: .3rem;
+}
+
+.signup-form input {
+    width: 100%;
+    padding: .5rem .2rem;
+    margin-block: .2rem;
+    border-radius: .2rem;
+    border: 2px solid #efefef;
+    -webkit-transition: 0.3s ease-in-out;
+    transition: 0.3s ease-in-out;
+}
+
+.signup-form input:focus {
+    outline: none;
+    border: 2px solid #8ed500;
+    -webkit-transition: 0.3s ease-in-out;
+    transition: 0.3s ease-in-out;
+}
+
+.signup-form-title {
+    background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 0.5)), to(rgba(0, 0, 0, 0.3))), url(../../static/images/community-activities-teens.jpg);
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.3)), url(../../static/images/community-activities-teens.jpg);
+    background-size: cover;
+    background-position: center;
+    border-top-left-radius: .3rem;
+    border-top-right-radius: .3rem;
+    text-align: center;
+    height: 200px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    color: white;
+}
+
+.signup-form-username {
+    margin-top: 1rem;
+}
+
+.signup-form-username,
+.signup-form-email,
+.signup-form-password,
+.signup-form-submit {
+    padding: 0 1rem;
+}
+
+.signup-form-submit {
+    margin-top: .5rem;
+}
+
+.signup-form-submit button {
+    padding: .5rem 0;
+    color: white;
+    width: 100%;
+    background-color: #8ed500;
+    border: 1px solid #8ed500;
+    border-radius: .2rem;
+    cursor: pointer;
+    -webkit-transition: 0.3s ease-in-out;
+    transition: 0.3s ease-in-out;
+}
+
+.signup-form-submit button:hover {
+    background-color: #6da300;
+    border: 1px solid #6da300;
+    -webkit-transition: 0.3s ease-in-out;
+    transition: 0.3s ease-in-out;
+}
+
+.signup-form-login {
+    padding: 1rem;
+    text-align: center;
+    font-size: .5rem;
+}
+
+.errorlist {
+    margin-top: .2rem;
+    width: 95%;
+    margin-inline: auto;
+    text-align: center;
+}
+
+.errorlist {
+    color: #842029;
+    background-color: #f8d7da;
+    padding: .5rem;
+    border-radius: .3rem;
+}

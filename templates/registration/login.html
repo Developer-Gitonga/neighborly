@@ -1,0 +1,30 @@
+{% extends 'registration/base.html' %} {% load static %} {% block head %}
+<link rel="stylesheet" href="{% static 'css/login.css' %}"> {% endblock %} {% block content %}
+<section class="login">
+    <form action="" class="login-form" method="post">
+        {% csrf_token %}
+        <div class="login-form-title">
+            <h1>Sign In</h1>
+        </div>
+        {{form.errors}}
+        <div class="login-form-username">
+            {{ form.username }}
+        </div>
+        <div class="login-form-password">
+            {{ form.password }}
+        </div>
+        <div class="login-form-submit">
+            <button type="submit">Sign In</button>
+        </div>
+        <div class="login-form-signup">
+            <h1>Not a member? <a href="{% url 'register' %}">Sign Up</a></h1>
+        </div>
+    </form>
+</section>
+<script>
+    $(document).ready(function() {
+        $("#id_username").attr('placeholder', '{{form.username.label}}');
+        $("#id_password").attr('placeholder', '{{form.password.label}}');
+    });
+</script>
+{% endblock %}

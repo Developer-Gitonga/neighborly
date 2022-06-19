@@ -1,0 +1,57 @@
+{% extends 'ip4/base.html' %} {% load static %} {% block head %}
+<link rel="stylesheet" href="{% static 'css/profile.css' %}"> {% endblock %} {% block content %}
+<main class="main">
+    <section class="main-profile">
+        <article class="main-profile-title">
+            <div class="main-profile-title-image">
+                {% if not profile.image.url %}
+                <img src="{% static 'images/default.jpg' %}" alt=""> {% else %}
+                <img src="{{profile.image.url}}" alt=""> {% endif %}
+            </div>
+            <div class="main-profile-title-desc">
+                <h1>{{ profile.username }}</h1>
+                <p>{{ profile.email }}</p>
+            </div>
+        </article>
+        <article class="main-profile-bio">
+            <div class="main-profile-bio-title">
+                <h1>BIO</h1>
+            </div>
+            <div class="main-profile-bio-bio">
+                {% if not profile.bio %}
+                <p>Tell us about yourself</p> {% else %}
+                <p>{{ profile.bio }}</p> {% endif %}
+            </div>
+        </article>
+        <article class="main-profile-form">
+            <form action="" class="main-profile-form-form" method="post" enctype='multipart/form-data'>
+                {% csrf_token %}
+                <div class="main-profile-form-form-name">
+                    {{ form.image }}
+                </div>
+                <div class="main-profile-form-form-name">
+                    {{ form.username }}
+                </div>
+                <div class="main-profile-form-form-email">
+                    {{ form.email }}
+                </div>
+                <div class="main-profile-form-form-location">
+                    {{ form.neighborhood }}
+                </div>
+                <div class="main-profile-form-form-bio">
+                    {{ form.bio }}
+                </div>
+                <div class="main-profile-form-form-submit">
+                    <button type="submit">Update</button>
+                </div>
+            </form>
+        </article>
+    </section>
+</main>
+<script src="{% static 'js/nav.js' %}"></script>
+<script>
+    $(document).ready(function() {
+        $("#id_neighborhood").attr('placeholder', '{{form.neighborhood.label}}');
+    });
+</script>
+{% endblock %}

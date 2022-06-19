@@ -1,0 +1,39 @@
+{% extends 'registration/base.html' %} {% load static %} {% block head %}
+<link rel="stylesheet" href="{% static 'css/register.css' %}"> {% endblock %} {% block content %}
+<section class="signup">
+    <form action="" class="signup-form" method="post">
+        {% csrf_token %}
+        <div class="signup-form-title">
+            <h1>Sign Up</h1>
+        </div>
+        {{ form.errors }}
+        <div class="signup-form-username">
+            {{ form.username }}
+        </div>
+        <div class="signup-form-email">
+            {{ form.email }}
+        </div>
+        <div class="signup-form-password">
+            {{ form.password1 }}
+        </div>
+        <div class="signup-form-password">
+            {{ form.password2 }}
+        </div>
+        <div class="signup-form-submit">
+            <button type="submit">Sign Up</button>
+        </div>
+        <div class="signup-form-login">
+            <h1>Already a member? <a href="{% url 'login' %}">Login</a></h1>
+        </div>
+
+    </form>
+</section>
+<script>
+    $(document).ready(function() {
+        $("#id_username").attr('placeholder', '{{form.username.label}}');
+        $("#id_email").attr('placeholder', '{{form.email.label}}');
+        $("#id_password1").attr('placeholder', '{{form.password1.label}}');
+        $("#id_password2").attr('placeholder', '{{form.password2.label}}');
+    });
+</script>
+{% endblock %}

@@ -1,0 +1,61 @@
+{% extends 'ip4/base.html' %} {% load static %} {% block head %}
+<link rel="stylesheet" href="{% static 'css/pop.css'%}">
+<link rel="stylesheet" href="{% static 'css/business.css'%}">
+<style>
+    .none {
+        display: none;
+    }
+</style>
+{% endblock %} {% block content %}
+<main class="main">
+    <section class="main-post  none" id="post">
+        <form action="" class="main-post-form" method="post" enctype='multipart/form-data'>
+            {% csrf_token %}
+            <div class="main-post-form-title">
+                <h1>Event/Business</h1>
+                <h2 id="close">&times;</h2>
+            </div>
+            <div class="main-post-form-input">
+                {{form.image}}{{ form.name }} {{ form.email }} {{ form.neighborhood }}
+            </div>
+            <div class="main-post-form-submit">
+                <button type="submit">Post</button>
+            </div>
+        </form>
+    </section>
+    <section class="main-landing">
+        <h1>Business</h1>
+    </section>
+    <section class="main-business">
+        {% if not user.profile.neighborhood %}
+        <p class="not">You haven't Set a Neighboorhod in your Profile</p>
+        {% else %} {% for bis in business %}
+        <article class="main-business-one">
+            <div class="main-business-one image">
+                <img src="{{bis.image.url}}" alt="" class="image__img">
+                <div class="image__overlay image__overlay--blur">
+                    <p>{{ bis.name }}</p>
+                </div>
+            </div>
+            <div class="main-business-one-title">
+                <h1>{{ bis.name }}</h1>
+            </div>
+            <div class="main-business-one-email">
+                <p><img src="{% static 'images/email(1).png' %}" alt="email"> {{bis.email}}</p>
+            </div>
+            <div class="main-business-one-owner">
+                <p>By <span>{{ bis.user }}</span></p>
+            </div>
+        </article>
+        {% endfor %} {%endif%}
+    </section>
+</main>
+<script src="{% static 'js/nav.js'%}"></script>
+<script src="{% static 'js/pop.js'%}"></script>
+<script>
+    $(document).ready(function() {
+        $("#id_name").attr('placeholder', '{{form.name.label}}');
+        $("#id_email").attr('placeholder', '{{form.email.label}}');
+    });
+</script>
+{% endblock %}
