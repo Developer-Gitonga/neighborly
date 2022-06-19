@@ -3,6 +3,7 @@ let open2 = document.getElementById('open2');
 let close = document.getElementById('close');
 let post = document.getElementById('post');
 
+
 open.addEventListener('click', () => {
     post.classList.toggle('none');
 });
