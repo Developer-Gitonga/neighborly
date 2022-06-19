@@ -4,7 +4,6 @@ from neighborly.models import Business, Contact, User, Profile,  NeighbourHood
 # Create your tests here.
 
 
-        
 class Profile(TestCase):
     def setUp(self):
         self.user = User.objects.create_user(username='testuser', password='12345')
