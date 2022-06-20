@@ -66,10 +66,7 @@ def business(request):
 @login_required(login_url='login')
 def contact(request):
     user = request.user
-    # if not user.profile.neighborhood:
-        # return render(request, 'ip4/emergency.html',{"title":'Emergency Contact','user':user})
     police = Contact.objects.all()
-    # medics = Contact.objects.get(name='medics',neighborhood=user.profile.neighborhood)
     return render(request, 'ip4/emergency.html',{'police':police})
 
 
