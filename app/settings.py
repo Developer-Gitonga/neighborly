@@ -164,11 +164,12 @@ django_heroku.settings(locals())
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 LOGIN_REDIRECT_URL = 'profile'
 LOGOUT_REDIRECT_URL = 'login'
-cloudinary.config( 
-    cloud_name = 'dnesn8pce', 
-    api_key = '392374929338132', 
-    api_secret = '9Sa-jgdY0KsPKiIgxYDJqJy_bvI'
-)
 
+cloudinary.config(
+    cloud_name = "dev-git",
+    api_key = "341925467838776",
+    api_secret = "shID5iCpSp2ZreEwNdxigVYlnGI",
+    secure = True
+)
 prod_db = dj_database_url.config(conn_max_age=500)
 DATABASES['default'].update(prod_db)
