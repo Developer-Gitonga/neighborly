@@ -49,7 +49,7 @@ def profile(request):
 @login_required(login_url='login')
 def business(request):
     user = request.user
-    business = Business.objects.filter(neighborhood=user.profile.neighborhood).all()
+    business = Business.objects.all()
     form = BusinessForm()
     if request.method=='POST':
         form = BusinessForm(request.POST, request.FILES)
